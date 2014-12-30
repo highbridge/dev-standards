@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    $('.gallery').hbGallery(
+    $('.js-gallery').hbGallery(
     {
         children: '.thumbnail',
         parent: '.overlay img',
@@ -10,18 +10,18 @@ $(document).ready(function()
         }
     });
 
-    $('body').on('click', '.gallery .thumbnail', function()
+    $('body').on('click', '.js-gallery .thumbnail', function()
     {
         $('.overlay').fadeIn();
 
         // Hide the previous image when opening the overlay
-        $('.gallery').trigger('gallery-hide');
-        $('.gallery').trigger('gallery-show', $(this).index());
+        $('.js-gallery').trigger('gallery-hide');
+        $('.js-gallery').trigger('gallery-show', $(this).index());
     });
 
     $('body').on('click', '.nav input', function()
     {
-        $('.gallery').trigger('gallery-'+this.dataset.value);
+        $('.js-gallery').trigger('gallery-'+$(this).data('value'));
         $('.nav input').prop('disabled', true);                    
     });
 
