@@ -4,7 +4,8 @@ requirejs.config({
     },
     
     "shim": {
-        "ui/hbGallery": ["jquery"],
+        "plugins/hbGallery": ["jquery"],
+        "ui/gallery": ["plugins/hbGallery"]
     }
 });
 
