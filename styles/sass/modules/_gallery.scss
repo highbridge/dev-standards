@@ -1,0 +1,34 @@
+/* ----------- Colors ---------- */
+
+.overlay {
+    @include position(absolute, 0 0 0 0);
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    color: #fff;
+    display: none;
+    height: 100%;
+    text-align: center;
+}
+
+.overlay-content {
+    @extend %vertical-align;
+}
+
+.overlay-nav {
+    margin: 3em 0 0;
+}
+
+.gallery {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.thumbnail {
+    background-color: $gray-light;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 .5%;
+    padding: 2em;
+    vertical-align: middle;
+    width: 18%;
+}

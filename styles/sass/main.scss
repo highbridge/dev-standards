@@ -1,21 +1,15 @@
-.overlay {
-    background-color: rgba(0, 0, 0, 0.8);
-    bottom: 0;
-    color: #fff;
-    display: none;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
+// Third-party
+@import "bourbon";
+@import "vendor/normalize";
 
-    .close {
-        cursor: pointer;
-    }
-}
+// Base
+@import "base/mixins";
+@import "base/colors";
+@import "base/global";
+@import "base/typography";
 
-.thumbnail {
-    background-color: #ddd;
-    cursor: pointer;
-    padding: 2em;
-    width: 50px;
-}
+// Components
+@import "components/buttons";
+
+// Modules
+@import "modules/gallery";
