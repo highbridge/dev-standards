@@ -6,7 +6,10 @@ define(function(){
 	 * config
 	 *  - component init variables
 	 */
-	var config = {};
+	var config = {
+		foo : 'bar',
+		bar : 'foo'
+	};
 
 	/**
 	 * init
@@ -15,8 +18,9 @@ define(function(){
 	 * @param {object} options
 	 */
 	var init = function(options) {
+
 		// set component config
-		config = options || {};
+		config = $.extend(config, options);
 
 		// call a private function
 		_private(config);
