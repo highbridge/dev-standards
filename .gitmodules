@@ -1,0 +1,3 @@
+[submodule "ui-libs"]
+	path = ui-libs
+	url = https://github.com/highbridge/ui-libs.git
