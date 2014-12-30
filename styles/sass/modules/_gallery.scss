@@ -14,7 +14,19 @@
 }
 
 .overlay-nav {
+    @include position(absolute, 50% null null null);
     margin: 3em 0 0;
+    width: 100%;
+}
+
+.btn-nav {
+    position: absolute;
+    &.prev {
+        left: 0;
+    }
+    &.next {
+        right: 0;
+    }
 }
 
 .gallery {

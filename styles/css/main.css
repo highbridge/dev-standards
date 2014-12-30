@@ -493,19 +493,26 @@ h1 {
 
 /* ----------- Colors ---------- */
 .btn {
+  -webkit-appearance: none;
+  background: #fff;
+  border: 0 none;
+  color: #333;
   cursor: pointer;
-  display: inline-block; }
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: .5em .8em;
+  text-transform: uppercase; }
+  .btn:hover, .btn:focus {
+    background-color: #b4e6ad;
+    outline: 0 none; }
 
 .close {
   position: absolute;
   top: 1rem;
   right: 1rem;
   background: #333;
-  cursor: pointer;
-  font-size: 1.4rem;
-  font-weight: bold;
-  padding: .5em .8em;
-  text-transform: uppercase; }
+  color: #fff; }
   .close:hover {
     background-color: #f54e51; }
 
@@ -523,7 +530,17 @@ h1 {
   text-align: center; }
 
 .overlay-nav {
-  margin: 3em 0 0; }
+  position: absolute;
+  top: 50%;
+  margin: 3em 0 0;
+  width: 100%; }
+
+.btn-nav {
+  position: absolute; }
+  .btn-nav.prev {
+    left: 0; }
+  .btn-nav.next {
+    right: 0; }
 
 .gallery {
   margin: 0 auto;
