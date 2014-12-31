@@ -1,13 +1,14 @@
 module.exports = function(grunt) {
 
   'use strict';
-  
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     sass: {
       dist: {
         options : {
-          loadPath: require('node-bourbon').includePaths
+          loadPath: require('node-bourbon').includePaths,
+          style : 'compressed'
         },
         files: {
           'styles/css/main.css' : 'styles/sass/main.scss'
