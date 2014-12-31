@@ -25,7 +25,7 @@ define(function() {
         var c = new Class();
         // done!
         console.log('component:', 'finished initialization');
-    }
+    };
 
     /**
      * _private
@@ -37,7 +37,7 @@ define(function() {
     var _private = function(y) {
         var x = y;
         console.log('component:', 'function _private called', 'x == ', x);
-    }
+    };
 
     /**
      * Class
@@ -54,10 +54,10 @@ define(function() {
     // Class constructor
     Class.prototype.construct = function() {
         console.log('component:', 'initialized an abstract class');
-    }
+    };
 
     return {
         init: init
     }
-    
+
 });

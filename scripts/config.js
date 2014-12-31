@@ -1,8 +1,7 @@
 requirejs.config({
     "paths": {
-      "jquery": "vendor/jquery"
+        "jquery": "vendor/jquery"
     },
-    
     "shim": {
         "plugins/hbGallery": ["jquery"],
         "ui/gallery": ["plugins/hbGallery"]
