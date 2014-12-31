@@ -2,9 +2,6 @@
   "name": "dev-standards",
   "version": "1.0.0",
   "description": "HighBridge Creative, Inc. development standards project",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/highbridge/dev-standards.git"
