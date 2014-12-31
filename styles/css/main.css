@@ -475,8 +475,8 @@ html {
   min-height: 100%; }
 
 body {
-  background: #ddd;
-  color: #333;
+  background: #dddddd;
+  color: #333333;
   font-size: 1rem;
   margin: 0 auto;
   max-width: 940px; }
@@ -496,7 +496,7 @@ h1 {
   -webkit-appearance: none;
   background: #fff;
   border: 0 none;
-  color: #333;
+  color: #333333;
   cursor: pointer;
   display: inline-block;
   font-size: 1.4rem;
@@ -511,7 +511,7 @@ h1 {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: #333;
+  background: #333333;
   color: #fff; }
   .close:hover {
     background-color: #f54e51; }
@@ -547,7 +547,7 @@ h1 {
   width: 80%; }
 
 .thumbnail {
-  background-color: #ddd;
+  background-color: #dddddd;
   cursor: pointer;
   display: inline-block;
   margin: 0 .5%;

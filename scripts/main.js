@@ -4,5 +4,3 @@ require(["jquery", "app/component", "plugins/hbGallery", "ui/gallery"], function
     component.init({hello : 'world'});
 
 });
-
-
