@@ -20,7 +20,6 @@
     }
 
     function animate(gallery, index) {
-
         gallery.animating = true;
         var from = $(gallery).find(gallery.options.children + '.current');
         var to = $(gallery).find(gallery.options.children).eq(index);
@@ -29,11 +28,11 @@
         if (to.length && from.index(gallery.options.children) != to.index(gallery.options.children)) {
 
             if (typeof gallery.options.animating == "function") gallery.options.animating.call(gallery, index);
-
             $('body').find(gallery.options.parent).fadeOut(function() {
 
                 $(this).attr('src', to[0].dataset.src);
                 $(this).on('load', function() {
+
                     $(this).fadeIn();
                     from.removeClass('current');
                     to.addClass('current');
@@ -45,7 +44,6 @@
 
             });
         } else {
-         
             gallery.animating = false;
             $('body').find(gallery.options.parent).fadeIn();
 
@@ -67,6 +65,7 @@
             display: 1,
             duration: 0.5
         };
+
         gallery.options = $.extend(gallery.options, input);
         init(gallery);
 
@@ -112,5 +111,5 @@
             Gallery.call(this[i], options);
         }
     };
-
+    
 })(jQuery);
