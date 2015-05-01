@@ -1,7 +1,9 @@
 /*
  * hbGallery -- HighBridge Gallery
+ *  - A really simple gallery!
  *
- * A really simple gallery!
+ * @author Rachel Shelton <rshelton@highbridgecreative.com>
+ * @version 1.0.0
  */
 (function($) {
 
@@ -14,39 +16,31 @@
         // Get first child
         var first = $(gallery).find(gallery.options.children).eq(0);
         first.addClass('current');
-
         // Populate the parent with our first child
-        $('body').find(gallery.options.parent).attr('src', first[0].dataset.src);
+        $('body').find(gallery.options.parent).attr('src', first.data('src'));
     }
 
     function animate(gallery, index) {
         gallery.animating = true;
         var from = $(gallery).find(gallery.options.children + '.current');
         var to = $(gallery).find(gallery.options.children).eq(index);
-
         // Make sure we're actually going somewhere
         if (to.length && from.index(gallery.options.children) != to.index(gallery.options.children)) {
-
             if (typeof gallery.options.animating == "function") gallery.options.animating.call(gallery, index);
             $('body').find(gallery.options.parent).fadeOut(function() {
-
-                $(this).attr('src', to[0].dataset.src);
+                $(this).attr('src', to.data('src'));
                 $(this).on('load', function() {
-
                     $(this).fadeIn();
                     from.removeClass('current');
                     to.addClass('current');
                     gallery.animating = false;
-
                     // Let the callback know where we moved to
                     if (typeof gallery.options.animated == "function") gallery.options.animated.call(gallery, index);
                 });
-
             });
         } else {
             gallery.animating = false;
             $('body').find(gallery.options.parent).fadeIn();
-
             // Let the callback know we didn't do anything
             if (typeof gallery.options.animated == "function") gallery.options.animated.call(gallery, from.index(gallery.options.children));
         }
@@ -59,16 +53,13 @@
      ************************/
     var Gallery = function(input) {
         var gallery = this;
-
         // Define default gallery.options
         gallery.options = {
             display: 1,
             duration: 0.5
         };
-
         gallery.options = $.extend(gallery.options, input);
         init(gallery);
-
         // Convenience event for going to the next pane
         $(gallery).on('gallery-next', function() {
             var current = $(gallery).find(gallery.options.children + '.current');
@@ -77,7 +68,6 @@
             if (next >= $(gallery).find(gallery.options.children).length) next = 0;
             $(gallery).trigger('gallery-show', next);
         });
-
         // Convenience event for going to the previous pane
         $(gallery).on('gallery-prev', function() {
             var current = $(gallery).find(gallery.options.children + '.current');
@@ -86,7 +76,6 @@
             if (prev < 0) prev = $(gallery).find(gallery.options.children).length - 1;
             $(gallery).trigger('gallery-show', prev);
         });
-
         // Allows showing to any image based on its index
         $(gallery).on('gallery-show', function(event, index) {
             // Make sure we're not animating
@@ -94,7 +83,6 @@
                 animate(gallery, index);
             }
         });
-
         // Hide the gallery parent
         $(gallery).on('gallery-hide', function() {
             $('body').find(gallery.options.parent).hide();
@@ -111,5 +99,5 @@
             Gallery.call(this[i], options);
         }
     };
-    
+
 })(jQuery);
